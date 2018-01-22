@@ -18,6 +18,8 @@ function showCountriesList(resp) {
 	resp.forEach(function(item){
 
 	   	$('<h3>').text(item.name).appendTo(countriesList);
+	   	var img = $('<img>').attr('src', item.flag).attr('widht', 90).attr('height', 60);
+		$('<h3>').appendTo(countriesList).append(img);
 	   	$('<li>').text('country native name: ' + item.nativeName).appendTo(countriesList);
 		$('<li>').text('capital: ' + item.capital).appendTo(countriesList);
 		$('<li>').text('region: ' + item.region).appendTo(countriesList);
@@ -30,7 +32,8 @@ function showCountriesList(resp) {
 			$('<li>').text('border lands: brak').appendTo(countriesList);
 			} else {
 			$('<li>').text('border lands: ' + caBorders).appendTo(countriesList);
-		}		
-});
+		}
+		
+	});
 
 }
